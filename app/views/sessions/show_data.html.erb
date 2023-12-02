@@ -1,0 +1,13 @@
+<h1>Dados de Autenticação</h1>
+<div id="authData"></div>
+
+<script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
+<script>
+  $(document).ready(function() {
+    var authData = {
+      access_token: <%= session[:access_token].to_json.html_safe %>
+    };
+
+    $('#authData').text(JSON.stringify(authData, null, 2));
+  });
+</script>
